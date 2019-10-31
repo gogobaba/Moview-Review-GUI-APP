@@ -9,7 +9,7 @@ from checkInternet import is_connected
 from Movies import Movie
 import sqlite3
 
-#omdb api -> https://www.omdbapi.com/?i=tt3896198&apikey=e120531a
+#omdb api -> {}
 
 
 
@@ -39,7 +39,7 @@ def format_response(data):
 
 def test_function(entry_text):
     if(is_connected(REMOTE_SERVER)):
-        r = requests.get('https://www.omdbapi.com/?i=tt3896198&apikey=e120531a&t={}'.format(entry_text))
+        r = requests.get('https://www.omdbapi.com/?i=tt3896198&apikey={Write api key}'.format(entry_text))
         data = json.loads(r.text)
         format_response(data)
         label['text'] = format_response(data)
